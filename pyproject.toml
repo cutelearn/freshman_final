@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "freshman-final"
+version = "0.1.0"
+description = ""
+authors = ["yang-lin94"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "freshman_final"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+beautifulsoup4 = "^4.11.1"
+matplotlib = "^3.6.2"
+requests = "^2.28.1"
+lxml = "^4.9.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
