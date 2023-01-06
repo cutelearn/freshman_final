@@ -16,25 +16,28 @@ def regular_year_and_mouth(data, row, year, mouth):
         if date:
             for i, sublist in enumerate(data):
                 if date.group(0) in sublist:
-                    # print(f'[{i}][{j}]')
                     num.append(float(data[i][row]))
-                    # print(data[i][1])
-
-    print(sum(num))
+    return int(sum(num))
 
 
-def calculation_date(data):
-    date = []
-    for i in range(1, len(data)):
-        date.append(data[i][0])
-    return date
 
-def chart_generation(**kwargs):
+def calculation_date(data,row,year):
+    mouthDate = []
+    for mouth in range(1,13):
+        mouthDate.append(regular_year_and_mouth(data, row, year, mouth))
+
+    return mouthDate
+
+def covid19_chart_generation(**kwargs):
     pass
 
 def main():
+    year = int(input("請輸入要查詢的年度:(目前有2020-2022)"))
     data = read_csv('covid19_tw_specimen.csv')
-    regular_year_and_mouth(data,1,2020,1)
+    # i = regular_year_and_mouth(data,1,2021,6)
+    # print(i)
+    j = calculation_date(data, 1, year)
+    print(j)
     # regular_year_and_mouth(data)
     # sublist = next(sublist for sublist in data if "2020/12/2" in sublist)
     # print(sublist.index("2020/12/2"))
@@ -42,5 +45,7 @@ def main():
     #     if "2020/12/5" in sublist:
     #         j = sublist.index("2020/12/5")
     #         print(f'[{i}][{j}]')
+
+
 if __name__ == '__main__':
     main()
