@@ -28,23 +28,34 @@ def calculation_date(data,row,year):
 
     return mouthDate
 
-def covid19_chart_generation(**kwargs):
-    pass
+def covid19_chart_generation(year, **kwargs):
+    month = range(1, 13)
+    h1 = plt.plot(month, kwargs['date'][0], "-o")
+    h2 = plt.plot(month, kwargs['date'][1], "-o")
+    h3 = plt.plot(month, kwargs['date'][2], "-o")
+    plt.rcParams['font.sans-serif'] = ['Taipei Sans TC Beta']
+    plt.legend((h1[0], h2[0], h3[0]), ("法定傳染病通報", "居家檢疫送驗", "擴大監測送驗"))
+    plt.xlabel('Month')
+    plt.title(f'{year}年度的確診人數')
+    plt.show()
 
 def main():
-    year = int(input("請輸入要查詢的年度:(目前有2020-2022)"))
+    while True:
+        try:
+            year = int(input("請輸入要查詢的年度:(目前有2020-2022)"))
+            if year in range(2020, 2023):
+                break
+        except ValueError:
+            print("請輸入數字")
     data = read_csv('covid19_tw_specimen.csv')
-    # i = regular_year_and_mouth(data,1,2021,6)
-    # print(i)
-    j = calculation_date(data, 1, year)
-    print(j)
-    # regular_year_and_mouth(data)
-    # sublist = next(sublist for sublist in data if "2020/12/2" in sublist)
-    # print(sublist.index("2020/12/2"))
-    # for i, sublist in enumerate(data):
-    #     if "2020/12/5" in sublist:
-    #         j = sublist.index("2020/12/5")
-    #         print(f'[{i}][{j}]')
+
+    date = []
+
+    for i in range(1, 4):
+        j = calculation_date(data, i, year)
+        date.append(j)
+
+    covid19_chart_generation(year, date=date)
 
 
 if __name__ == '__main__':
