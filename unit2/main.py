@@ -1,14 +1,20 @@
+"""期末作業第二題"""
 import csv
 import re
+
 import matplotlib.pyplot as plt
 
+
 def read_csv(filename):
-    with open(filename, "r", encoding= "utf-8") as f:
-        reader = csv.reader(f)
+    """讀取 CSV 檔案"""
+    with open(filename, "r", encoding="utf-8") as file:
+        reader = csv.reader(file)
         data = [row for row in reader]
     return data
 
+
 def regular_year_and_mouth(data, row, year, mouth):
+    """將年份和月份帶入正規表達式"""
     num = []
     date_pattern = rf"{year}/{mouth}/\d+"
     for pattern in data:
@@ -20,26 +26,30 @@ def regular_year_and_mouth(data, row, year, mouth):
     return int(sum(num))
 
 
+def calculation_date(data, row, year):
+    """計算每個月的確診人數"""
+    mouth_date = []
+    for mouth in range(1, 13):
+        mouth_date.append(regular_year_and_mouth(data, row, year, mouth))
 
-def calculation_date(data,row,year):
-    mouthDate = []
-    for mouth in range(1,13):
-        mouthDate.append(regular_year_and_mouth(data, row, year, mouth))
+    return mouth_date
 
-    return mouthDate
 
 def covid19_chart_generation(year, **kwargs):
+    """繪製圖表"""
     month = range(1, 13)
-    h1 = plt.plot(month, kwargs['date'][0], "-o")
-    h2 = plt.plot(month, kwargs['date'][1], "-o")
-    h3 = plt.plot(month, kwargs['date'][2], "-o")
+    line1 = plt.plot(month, kwargs['date'][0], "-o")
+    line2 = plt.plot(month, kwargs['date'][1], "-o")
+    line3 = plt.plot(month, kwargs['date'][2], "-o")
     plt.rcParams['font.sans-serif'] = ['Taipei Sans TC Beta']
-    plt.legend((h1[0], h2[0], h3[0]), ("法定傳染病通報", "居家檢疫送驗", "擴大監測送驗"))
+    plt.legend((line1[0], line2[0], line3[0]), ("法定傳染病通報", "居家檢疫送驗", "擴大監測送驗"))
     plt.xlabel('Month')
     plt.title(f'{year}年度的確診人數')
     plt.show()
 
+
 def main():
+    """主程式"""
     while True:
         try:
             year = int(input("請輸入要查詢的年度:(目前有2020-2022)"))
