@@ -17,6 +17,7 @@ lxml = "^4.9.2"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.19.4"
+notebook = "^6.5.2"
 
 [build-system]
 requires = ["poetry-core"]
