@@ -1,47 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Popins:200,300,400,500,600,700,800,900&display=swap');
-*
-{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Popins', sans-serif;
 }
-body
-{
+
+body {
     background: #f9f9f9;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
-.container
-{
+
+.container {
     position: relative;
     width: 100%;
     max-width: 1000px;
     background: #fff;
     margin: 50px;
-    box-shadow: 0 50px 75px rgba(0,0,0,0.1);
+    box-shadow: 0 50px 75px rgba(0, 0, 0, 0.1);
     border-left: 50px solid #fff;
     border-right: 50px solid #fff;
 }
-.container .top
-{
+
+.container .top {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 2fr;
     padding: 40px;
     padding-bottom: 0;
 }
-.container .top .imgBx
-{
+
+.container .top .imgBx {
     position: relative;
     width: 100%;
     display: flex;
     align-items: center;
 }
-.container .top .imgBx .box
-{
+
+.container .top .imgBx .box {
     position: relative;
     width: 70%;
     min-width: 200px;
@@ -49,8 +49,8 @@ body
     overflow: hidden;
     aspect-ratio: 1;
 }
-.container .top .imgBx .box img
-{
+
+.container .top .imgBx .box img {
     position: absolute;
     top: 0;
     left: 0;
@@ -58,38 +58,38 @@ body
     height: 100%;
     object-fit: cover;
 }
-.container .top .profileText
-{
+
+.container .top .profileText {
     position: relative;
     padding: 40px;
     display: flex;
     align-items: center;
 }
-.container .top .profileText h3
-{
+
+.container .top .profileText h3 {
     font-size: 3em;
     letter-spacing: 0.1em;
     line-height: 1.2em;
     font-weight: 600;
     color: #333;
 }
-.container .top .profileText h3 span
-{
+
+.container .top .profileText h3 span {
     font-size: 0.5em;
     font-weight: 300;
     top: -10px;
 
 }
-.container .contentBox
-{
+
+.container .contentBox {
     position: relative;
     min-height: 500px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     padding: 0 40px 40px;
 }
-.container .contentBox h3
-{
+
+.container .contentBox h3 {
     border-left: 4px solid #ff8bb3;
     padding-left: 10px;
     line-height: 1em;
@@ -99,13 +99,13 @@ body
     margin-bottom: 20px;
     margin-top: 50px;
 }
-.container .contentBox ul
-{
+
+.container .contentBox ul {
     position: relative;
     margin: 10px 0;
 }
-.container .contentBox ul li
-{
+
+.container .contentBox ul li {
     list-style: none;
     margin: 25px 0;
     line-height: 1em;
@@ -113,48 +113,48 @@ body
     cursor: pointer;
     display: flex;
 }
-.container .contentBox ul li ion-icon
-{
+
+.container .contentBox ul li ion-icon {
     font-size: 1.2em;
     margin-right: 10px;
     color: #3590d2;
 }
-.container .contentBox ul.education li
-{
+
+.container .contentBox ul.education li {
     flex-direction: column;
     margin: 25px 0;
 }
-h5
-{
+
+h5 {
     color: #3590d2;
 }
-h4
-{
+
+h4 {
     color: #333;
     font-weight: 500;
     margin: 5px 0;
 }
-h6
-{
+
+h6 {
     color: #666;
     font-weight: 300;
     font-size: 1em;
 }
-.container .contentBox ul.interest
-{
+
+.container .contentBox ul.interest {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.container .contentBox ul.interest li
-{
+
+.container .contentBox ul.interest li {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 20px 0;
 }
-.container .contentBox ul.interest li .icon
-{
+
+.container .contentBox ul.interest li .icon {
     position: relative;
     width: 40px;
     height: 40px;
@@ -165,47 +165,47 @@ h6
     justify-content: center;
     align-items: center;
 }
-.container .contentBox ul.interest li .icon ion-icon
-{
+
+.container .contentBox ul.interest li .icon ion-icon {
     color: #fff;
     margin-right: 0;
 }
-p
-{
+
+p {
     font-size: 300;
 }
-.rightSide
-{
+
+.rightSide {
     padding-left: 40px;
 }
-.about .box
-{
+
+.about .box {
     display: flex;
     flex-direction: row;
     margin: 20px 0;
 }
-.about .box .year_company
-{
+
+.about .box .year_company {
     min-width: 150px;
     margin-bottom: 10px;
 }
-.about .box .year_company h5
-{
+
+.about .box .year_company h5 {
     color: #333;
     font-weight: 600;
 }
-.about .box .year_company h5:nth-child(1)
-{
+
+.about .box .year_company h5:nth-child(1) {
     color: #3590d2;
 }
-.about .box .text h4
-{
+
+.about .box .text h4 {
     color: #3590d2;
     font-size: 16px;
     margin: 0;
 }
-.about.skills .box
-{
+
+.about.skills .box {
     position: relative;
     width: 100%;
     display: grid;
@@ -213,21 +213,21 @@ p
     justify-content: center;
     align-items: center;
 }
-.about.skills .box h4
-{
+
+.about.skills .box h4 {
     color: #333;
     font-weight: 500;
     margin-bottom: 5px;
 }
-.about.skills .box .percent
-{
+
+.about.skills .box .percent {
     position: relative;
     width: 100%;
     height: 10px;
     background: #e3e3e3;
 }
-.about.skills .box .percent div
-{
+
+.about.skills .box .percent div {
     position: absolute;
     top: 0;
     left: 0;
